@@ -1,11 +1,9 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utilities.Driver;
 
-import java.security.PublicKey;
 import java.util.List;
 
 public class CarvanaSearchCarsPage extends CarvanaBasePage{
@@ -56,7 +54,21 @@ public class CarvanaSearchCarsPage extends CarvanaBasePage{
     @FindBy(css = "div[data-qa='shipping-cost']")
     public List<WebElement> deliveryChip;
 
-    @FindBy(css = "button[class*='Button-sc-1a1035-1 ifuuwK c']")
+    @FindBy(xpath = "//ul[@id='pagination']//li[3]/button[1]")
     public WebElement nextButton;
+
+    @FindBy(css = "span[data-qa='pagination-text']")
+    public WebElement pagesData;
+
+    @FindBy(css = "button[data-testid='bottom-dock-modal-btn']")
+    public WebElement messageToClick;
+
+    @FindBy(css = "div[data-qa='header-container']>svg")
+    public WebElement closeAlertButton;
+
+
+    public static int pageIAmIn(String str){
+        return Integer.parseInt(str.split(" ")[1]);
+    }
 
 }

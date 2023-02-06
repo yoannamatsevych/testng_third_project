@@ -69,7 +69,6 @@ public class CarvanaSearchCarsTest extends CarvanaBase {
         And user clicks on "GO" button in the search input box
         Then user should see "mercedes-benz" in the url
         And validate each result tile
-
         VALIDATION OF EACH TILE INCLUDES BELOW
     Make sure each result tile is displayed with below information
     1. an image
@@ -95,7 +94,7 @@ public class CarvanaSearchCarsTest extends CarvanaBase {
         Assert.assertTrue(driver.getCurrentUrl().contains("mercedes-benz"));
 
 
-       while(carvanaSearchCarsPage.nextButton.isEnabled()) {
+
            IntStream.range(0, carvanaSearchCarsPage.tile.size()).forEach(i -> {
                Assert.assertTrue(carvanaSearchCarsPage.tilePicture.get(i).isDisplayed());
                Assert.assertTrue(carvanaSearchCarsPage.addToFavoriteButton.get(i).isDisplayed());
@@ -128,11 +127,11 @@ public class CarvanaSearchCarsTest extends CarvanaBase {
                Assert.assertTrue(carvanaSearchCarsPage.deliveryChip.get(i) != null
                        && !carvanaSearchCarsPage.deliveryChip.get(i).getText().isEmpty());
 
-               carvanaSearchCarsPage.nextButton.click();
+
 
            });
 
        }
     }
 
-}
+

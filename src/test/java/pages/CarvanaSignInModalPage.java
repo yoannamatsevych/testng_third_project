@@ -2,9 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import scripts.CarvanaBase;
-import utilities.Driver;
+
 
 public class CarvanaSignInModalPage extends CarvanaBasePage {
 
@@ -26,5 +24,7 @@ public class CarvanaSignInModalPage extends CarvanaBasePage {
 
     @FindBy(css = "div[class*='error-banner__c']")
     public WebElement errorMassage;
+
+
 
 }

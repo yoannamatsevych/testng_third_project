@@ -26,13 +26,18 @@ public class CarvanaSignInTest extends CarvanaBase {
 
     @Test(priority = 4, description = "Validate the sign in error message")
     public void validatingSignInErrorMessage() {
-        for (int i = 0; i <= 2; i++) {
-            try {
+        for(int i=0; i<=2;i++){
+            try{
                 carvanaBasePage.signInButton.click();
                 break;
-            } catch (Exception e) {
+            }
+            catch(Exception e){
                 System.out.println(e.getMessage());
             }
+        }
+
+
+
 
             carvanaSignInModalPage.emailInput.sendKeys("johndoe@gmail.com");
             carvanaSignInModalPage.continueButton.click();
@@ -45,4 +50,4 @@ public class CarvanaSignInTest extends CarvanaBase {
 
 
     }
-}
+

@@ -2,6 +2,7 @@ package scripts;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Waiter;
 
 
 public class CarvanaHeaderTest extends CarvanaBase{
@@ -13,17 +14,20 @@ public class CarvanaHeaderTest extends CarvanaBase{
     */
     @Test(priority = 2, description = "Validate the Carvana logo")
     public void validatingCarvanaLogo() {
-
-        for (int i = 0; i <= 2; i++) {
-            try {
+        for(int i=0; i<=2;i++){
+            try{
                 Assert.assertTrue(carvanaBasePage.logo.isDisplayed());
                 break;
-            } catch (Exception e) {
+            }
+            catch(Exception e){
                 System.out.println(e.getMessage());
             }
+        }
+
+
 
         }
-    }
+
 
 
     /*
@@ -36,9 +40,11 @@ public class CarvanaHeaderTest extends CarvanaBase{
         String[] expectedNavigationItems = {"HOW IT WORKS", "ABOUT CARVANA", "SUPPORT & CONTACT"};
 
         for (int i = 0; i < expectedNavigationItems.length; i++) {
-            Assert.assertTrue(carvanaBasePage.navigationItems.get(i).isDisplayed());
-            Assert.assertEquals(carvanaBasePage.navigationItems.get(i).getText(), expectedNavigationItems[i]);
-        }
+                    Waiter.waitForVisibilityOfElement(carvanaBasePage.navigationItems.get(i), 30);
+                    Assert.assertTrue(carvanaBasePage.navigationItems.get(i).isDisplayed());
+                    Assert.assertEquals(carvanaBasePage.navigationItems.get(i).getText(), expectedNavigationItems[i]);
+                }
+
 
     }
 
